@@ -57,6 +57,21 @@ public class TextReverse implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
 
+        if(e.getActionCommand().equals("Reverse")) {
+            // Reverse the string logic
+            String primaText = mTextField.getText();
+            String alterText = "";
+
+            for (int i = primaText.length() -1; i >= 0; i--) {
+                alterText += primaText.charAt(i);
+                contentLabel.setText(alterText);
+            }
+
+        } else {
+            // Enter was pressed while focus in the textfield
+            contentLabel.setText(" You pressed Enter. Text is: " + mTextField.getText());
+        }
+
     }
 
     public static void main(String[] args) {
